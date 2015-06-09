@@ -1,8 +1,8 @@
 <?php
 /**
-* @file
-* A description of what your module does.
-*/
+ * @file
+ * A description of what your module does.
+ */
 
 /**
  * Implements hook_menu().
@@ -19,9 +19,11 @@ function ng_gpa_calculator_menu() {
 }
 
 function ng_gpa_calculator() {
-  angularjs_init_application('ng_gpa_calculator');
+  angularjs_init_application('gpaCalc');
+  // CSS files for app
+  drupal_add_css(drupal_get_path('module', 'ng_gpa_calculator') . '/css/style.css');
   // JS files for app
-  drupal_add_js(drupal_get_path('module', 'ng_gpa_calculator') . 'js/app.js');
+  drupal_add_js(drupal_get_path('module', 'ng_gpa_calculator') . '/js/app.js');
   return theme('ng_gpa_calculator');
 }
 
