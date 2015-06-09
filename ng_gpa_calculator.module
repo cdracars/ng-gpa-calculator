@@ -1,0 +1,39 @@
+<?php
+/**
+* @file
+* A description of what your module does.
+*/
+
+/**
+ * Implements hook_menu().
+ */
+function ng_gpa_calculator_menu() {
+  $items = array();
+  $items['current-students/gpa-calculator'] = array(
+    'title' => t('GPA Calculator'),
+    'page callback' => 'ng_gpa_calculator',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+function ng_gpa_calculator() {
+  angularjs_init_application('ng_gpa_calculator');
+  // JS files for app
+  drupal_add_js(drupal_get_path('module', 'ng_gpa_calculator') . 'js/app.js');
+  return theme('ng_gpa_calculator');
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ng_gpa_calculator_theme() {
+  $themes = array();
+  $themes['ng_gpa_calculator'] = array (
+    'template' => 'theme/ng_gpa_calculator',
+    'parameters' => array(),
+  );
+
+  return $themes;
+}

@@ -1,0 +1,3 @@
+name = AngularJS Gpa Calculator
+description = Provides a GPA Calculator.
+core = 7.x
