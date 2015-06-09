@@ -1,0 +1,12 @@
+.calc-label,
+.calc-select {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.calc-row {
+  display: flex;
+}
+
+.calc-row label {
+  font-weight: normal;
+}
