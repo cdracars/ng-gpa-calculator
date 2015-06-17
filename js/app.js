@@ -12,7 +12,7 @@ angular.module('gpaCalc').controller('CalculatorController', function(){
         {letterGrade:'B', numberGrade:3.00},
         {letterGrade:'C', numberGrade:2.00},
         {letterGrade:'D', numberGrade:1.00},
-        {letterGrade:'WF/F', numberGrade:0}
+        {letterGrade:'WF/F', numberGrade:0.00}
     ];
 
     self.hours = [
@@ -26,9 +26,13 @@ angular.module('gpaCalc').controller('CalculatorController', function(){
         {numberHours:8}
     ];
 
-    self.gpas = [{
-        studentGrades:[{letterGrade:'', numberGrade:''}]
-    }];
+    self.gpas = [
+        {studentCredits:[{}],studentGrades:[{}]},
+        {studentCredits:[{}],studentGrades:[{}]},
+        {studentCredits:[{}],studentGrades:[{}]},
+        {studentCredits:[{}],studentGrades:[{}]},
+        {studentCredits:[{}],studentGrades:[{}]}
+    ];
 
     self.total = function(){
         var total = 0;
@@ -40,8 +44,8 @@ angular.module('gpaCalc').controller('CalculatorController', function(){
             gradeAdd += gradeMultiple;
             currentCredit = self.gpas[i].studentCredits.numberHours;
             currentGrade = self.gpas[i].studentGrades.numberGrade;
-            if(!currentGrade || !currentCredit) {
-                return total;
+            if(!currentGrade && currentGrade != 0 || !currentCredit) {
+                // If the above is true do nothing.
             } else {
                 total = gradeAdd/creditTotal;
             }
@@ -58,5 +62,35 @@ angular.module('gpaCalc').controller('CalculatorController', function(){
                 numberHours:""
             }
         });
+    }
+});
+
+angular.module('gpaCalc').controller('DesiredGPAController', function(){
+    var dgpa = this;
+
+    dgpa.desiredTotal = function(){
+        var total = 0;
+        dgpa.result = [];
+
+        dgpa.letterGrade = [
+            {value:4.0},
+            {value:3.75},
+            {value:3.5},
+            {value:3.25},
+            {value:3.0}
+        ];
+
+        pointsNeeded = dgpa.desiredGPA * dgpa.completedHours;
+        pointsEarned = dgpa.currentGPA * dgpa.completedHours;
+        neededMinusEarned = pointsNeeded - pointsEarned;
+        for (var i = 0; i < dgpa.letterGrade.length; i++) {
+            constantMinusEarned = dgpa.letterGrade[i].value - dgpa.desiredGPA;
+            dgpa.total = Math.ceil(neededMinusEarned / constantMinusEarned);
+            if(dgpa.total > 0 && dgpa.total != Infinity){
+                dgpa.result.push({hours:dgpa.total, value:dgpa.letterGrade[i].value});
+            }
+        }
+
+        return total;
     }
 });

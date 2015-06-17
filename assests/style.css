@@ -1,0 +1,34 @@
+.calc-app,
+.calc-app2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calc-app2 .form-item {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.l-box {
+  padding-bottom: 1px;
+}
+.calc-label,
+.calc-select {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.calc-row {
+  display: flex;
+}
+.calc-row label {
+  font-weight: normal;
+}
+.calc-total {
+  font-size: 25px !important;
+}
+.calc-list {
+  margin-top: 0;
+}
+hr {
+  margin: .5em 0 !important;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ng_gpa_calculator",
+  "version": "1.0.0",
+  "description": "Drupal module wrapper for angularJS application for calculating a GPA.",
+  "main": "ng_gpa_calculator.module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdracars/ng-gpa-calculator.git"
+  },
+  "keywords": [
+    "drupal",
+    "angularjs"
+  ],
+  "author": "Cody Dracars",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdracars/ng-gpa-calculator/issues"
+  },
+  "scripts": {
+    "build:css": "postcss --use autoprefixer -b 'last 2 versions' assests/*.css -d css/"
+  },
+  "homepage": "https://github.com/cdracars/ng-gpa-calculator"
+}
