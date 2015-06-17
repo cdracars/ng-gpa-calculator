@@ -25,6 +25,11 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media screen and (min-width: 400px) {
+  .calc-app2 .form-item {
+    width: 70%;
+  }
+}
 .l-box {
   padding-bottom: 1px;
 }
