@@ -6,12 +6,17 @@
 }
 .calc-app2 .form-item {
   display: flex;
-  width: 70%;
+  width: 50%;
   justify-content: space-between;
 }
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 600px) {
   .calc-app2 .form-item {
-    width: 50%;
+    width: 60%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .calc-app2 .form-item {
+    width: 70%;
   }
 }
 .l-box {
