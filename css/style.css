@@ -25,7 +25,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 400px) {
   .calc-app2 .form-item {
     width: 50%;
   }
