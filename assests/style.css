@@ -19,6 +19,8 @@
 }
 .calc-row {
   display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .calc-row label {
   font-weight: normal;
