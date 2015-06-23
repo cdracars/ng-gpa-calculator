@@ -6,13 +6,8 @@
 }
 .calc-app2 .form-item {
   display: flex;
-  width: 50%;
+  width: 60%;
   justify-content: space-between;
-}
-@media screen and (max-width: 600px) {
-  .calc-app2 .form-item {
-    width: 60%;
-  }
 }
 @media screen and (max-width: 500px) {
   .calc-app2 .form-item {
