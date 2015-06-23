@@ -44,7 +44,7 @@
     include “F” but NOT incompletes (I) or withdrawals (W).</p>
   <div class="calc-app2" ng-controller="DesiredGPAController as dgpa">
     <div class="form-item">
-      <label>Graded Hours Completed (Divisor)</label><input type="number" min="0" step="any" ng-model="dgpa.completedHours"></input>
+      <label>Graded Hours Completed</label><input type="number" min="0" step="any" ng-model="dgpa.completedHours"></input>
     </div>
     <div class="form-item">
       <label>Current GPA</label><input type="number" min="0" step="any" ng-model="dgpa.currentGPA"></input>
