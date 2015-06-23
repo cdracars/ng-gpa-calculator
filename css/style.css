@@ -19,11 +19,16 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
+  width: 50%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .calc-app2 .form-item {
+    width: 60%;
+  }
 }
 @media screen and (max-width: 500px) {
   .calc-app2 .form-item {
@@ -65,4 +70,13 @@
 }
 hr {
   margin: .5em 0 !important;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
 }
