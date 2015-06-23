@@ -38,10 +38,13 @@
 
   <hr>
 
-  <p>Wanting to raise your GPA? Use our second GPA calculator to determine how many hours you need to get it back to where you want it. (<strong>Note</strong>: See Registrar for official calculations.) You’ll need your current GPA, the number of hours you’ve received so far and the desired GPA.</p>
+  <p>Wanting to raise your GPA? Use our second GPA calculator to determine how many graded hours you need to get it back
+    to where you want it. (<strong>Note</strong>: See Registrar for official calculations.) You’ll need your current GPA,
+    the number of graded hours completed (divisor) you’ve received so far and the desired GPA. Graded credit hours should
+    include “F” but NOT incompletes (I) or withdrawals (W).</p>
   <div class="calc-app2" ng-controller="DesiredGPAController as dgpa">
     <div class="form-item">
-      <label>Completed Hours</label><input type="number" min="0" step="any" ng-model="dgpa.completedHours"></input>
+      <label>Graded Hours Completed</label><input type="number" min="0" step="any" ng-model="dgpa.completedHours"></input>
     </div>
     <div class="form-item">
       <label>Current GPA</label><input type="number" min="0" step="any" ng-model="dgpa.currentGPA"></input>
@@ -52,9 +55,9 @@
     <div class="form-item">
       <button ng-click="dgpa.desiredTotal()">Calculate</button>
     </div>
-    <p ng-hide="!dgpa.total">Since you have <strong>{{ dgpa.completedHours }}</strong> hours completed, to raise your GPA from a <strong>{{
+    <p ng-hide="!dgpa.total">Since you have <strong>{{ dgpa.completedHours }}</strong> graded hours completed, to raise your GPA from a <strong>{{
         dgpa.currentGPA }}</strong> to <strong>{{ dgpa.desiredGPA | number:2 }}</strong>:</p>
 
-    <p class="calc-total" ng-hide="!dgpa.total" ng-repeat="letter in dgpa.result">You'll need <strong>{{ letter.hours }}</strong> hours at <strong>{{ letter.value | number:2 }}</strong> for a GPA of <strong>{{ dgpa.desiredGPA | number:2 }}</strong>.</p>
+    <p class="calc-total" ng-hide="!dgpa.total" ng-repeat="letter in dgpa.result">You'll need <strong>{{ letter.hours }}</strong> graded hours at <strong>{{ letter.value | number:2 }}</strong> for a GPA of <strong>{{ dgpa.desiredGPA | number:2 }}</strong>.</p>
   </div>
 </div>
